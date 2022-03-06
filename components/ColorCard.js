@@ -4,9 +4,9 @@ import Clipboard from '@react-native-clipboard/clipboard';
 import {AppContext} from '../context/AppContext';
 
 const ColorCard = ({color}) => {
-  const {setCopeiedColor} = useContext(AppContext);
+  const {setCopiedColor} = useContext(AppContext);
   const copyToClipboard = () => {
-    setCopeiedColor(color);
+    setCopiedColor(color);
     Clipboard.setString(color);
     // fetchCopiedText();
   };

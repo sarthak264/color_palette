@@ -3,11 +3,11 @@ import {StyleSheet, Text, View, Animated} from 'react-native';
 import {AppContext} from '../context/AppContext';
 
 const Notification = () => {
-  const {copeiedColor} = useContext(AppContext);
+  const {copiedColor} = useContext(AppContext);
   // const [y, setY] = useState(-70);
   const y = useRef(new Animated.Value(-70)).current;
   useEffect(() => {
-    if (copeiedColor.length > 0) {
+    if (copiedColor.length > 0) {
       Animated.timing(y, {
         toValue: 0,
         useNativeDriver: true,
@@ -21,7 +21,7 @@ const Notification = () => {
         }).start();
       }, 700);
     }
-  }, [copeiedColor]);
+  }, [copiedColor]);
 
   const styles = StyleSheet.create({
     notification: {
@@ -40,7 +40,7 @@ const Notification = () => {
   return (
     <Animated.View style={styles.notification}>
       <Text style={styles.notificationTxt}>
-        Color {copeiedColor} copied to your clipboard.
+        Color {copiedColor} copied to your clipboard.
       </Text>
     </Animated.View>
   );
